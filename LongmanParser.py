@@ -66,8 +66,7 @@ def getSystemWords(file):
             w = replaceSpecialSymb(str(w))                                         
             syst.append(w)
     return syst
-       
-         
+             
 
 #запись слов в файл и сохранение
 def saveWordsToFile(listWords, fileName):
