@@ -1,0 +1,18 @@
+﻿adj
+adv
+article
+auxiliary
+determiner
+pron
+prep
+pre
+predeterminer
+ v 
+ n 
+modal
+conj
+coj
+number
+interjection
+iterjectio
+indefinite
