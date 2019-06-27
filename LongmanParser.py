@@ -1,3 +1,6 @@
+from googletrans import Translator
+
+
 fileSystWords = 'systemwords.txt'
 fileLongmanWords = 'longman.txt'
 
@@ -30,7 +33,7 @@ def main():
         listSpeaker3 = list()
         listWrite1 = list()
         listWrite2 = list()
-        listWrite3 = list()
+        listWrite3 = list()     
         with open(fileLongmanWords, 'r') as reader:           
             for longmanWord in reader:
                 longmanWord = getNormalLine(longmanWord,systemWords)                           
@@ -48,6 +51,12 @@ def main():
             saveWordsToFile(listWrite3, fileThirdWrite)
     except Exception as e:
         print(e)
+
+#перевод слова с английского на русский
+def translaterWord(word):
+    translator = Translator()
+    translation = translator.translate(word, src='en',dest='ru')
+    return translation.text
 
 #разбиение слов по категориям лонгман
 def getCategoryLongman(list,longman,category):
