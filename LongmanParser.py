@@ -38,17 +38,17 @@ def main():
             for longmanWord in reader:
                 longmanWord = getNormalLine(longmanWord,systemWords)                           
                 listSpeaker1 = getCategoryLongman(listSpeaker1,longmanWord,speakFreaquency1)
-                listSpeaker2 = getCategoryLongman(listSpeaker2,longmanWord,speakFreaquency2)
-                listSpeaker3 = getCategoryLongman(listSpeaker3,longmanWord,speakFreaquency3)
-                listWrite1 = getCategoryLongman(listWrite1,longmanWord,writeFrequency1)
-                listWrite2 = getCategoryLongman(listWrite2,longmanWord,writeFrequency2)
-                listWrite3 = getCategoryLongman(listWrite3,longmanWord,writeFrequency3)
+                #listSpeaker2 = getCategoryLongman(listSpeaker2,longmanWord,speakFreaquency2)
+                #listSpeaker3 = getCategoryLongman(listSpeaker3,longmanWord,speakFreaquency3)
+                #listWrite1 = getCategoryLongman(listWrite1,longmanWord,writeFrequency1)
+                #listWrite2 = getCategoryLongman(listWrite2,longmanWord,writeFrequency2)
+                #listWrite3 = getCategoryLongman(listWrite3,longmanWord,writeFrequency3)
             saveWordsToFile(listSpeaker1, fileFirstSpeak)
-            saveWordsToFile(listSpeaker2, fileSecondSpeak)
-            saveWordsToFile(listSpeaker3, fileThirdSpeak)
-            saveWordsToFile(listWrite1, fileFirstWrite)
-            saveWordsToFile(listWrite2, fileSecondWrite)
-            saveWordsToFile(listWrite3, fileThirdWrite)
+            #saveWordsToFile(listSpeaker2, fileSecondSpeak)
+            #saveWordsToFile(listSpeaker3, fileThirdSpeak)
+            #saveWordsToFile(listWrite1, fileFirstWrite)
+            #saveWordsToFile(listWrite2, fileSecondWrite)
+            #saveWordsToFile(listWrite3, fileThirdWrite)
     except Exception as e:
         print(e)
 
@@ -64,7 +64,8 @@ def getCategoryLongman(list,longman,category):
     longman = longman.lower()
     if category in longman:
        longman = replaceSystemWord(longman, listFrequency)
-       list.append(longman)
+       translation = translaterWord(longman);     
+       list.append(translation +'[]'+longman)
     return list
  
 #получение слов которые необходимо исключить из строки
